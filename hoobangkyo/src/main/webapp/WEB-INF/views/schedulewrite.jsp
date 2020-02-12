@@ -102,8 +102,12 @@
 	var username = "킹갓훈";
 	var json = "";
 	var subjects = new Array();
-	function writejson(subjectid,tst,tet) {
+	function writejson(subjectid,starttime,endtime) {
 		let result ;
+		
+		let tst = starttime;
+		let tet = endtime;
+		
 		
 		for(let j =0 ; j <= i ; j++ ){
 			let subidcheck = sendjson[j].subjectid ; // 현재 저장되어있는(비교할) 과목 id
@@ -113,11 +117,10 @@
 			
 			
 			if((sst <=tst<=set)!=true && (sst <=tet<=set) !=true){
-			if(비교식){
 				result =true;
-			}else{
-				result =false;
-			}
+			}else if((tst <sst) && (tet > set)){
+				result =true;
+			}else{result = false;}
 			// 킹갓 질문 : json에 데이터를 오버해서 넣어도 가능한지?
 		}
 		
