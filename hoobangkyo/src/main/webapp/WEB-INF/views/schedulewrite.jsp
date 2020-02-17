@@ -129,28 +129,29 @@
 				// 저장된 subjectid 로 starttime 이랑 endtime을 가져오는 작업 후
 				// 해당 값을 비교함.	
 				if (wday == sendjson[j].wday){
-					
-					
-					
-				}
-				let sst = sendjson[j].starttime;
-				let set = sendjson[j].endtime;
-				 
-				console.log("sst" + sst)
-				console.log("set" + set)
-				console.log("tst" + tst)
-				console.log("tet" + tet)
+					let sst = sendjson[j].starttime;
+					let set = sendjson[j].endtime;
+					 
+					console.log("sst" + sst)
+					console.log("set" + set)
+					console.log("tst" + tst)
+					console.log("tet" + tet)
 
-				
- 				if ((sst <= tst && tst<= set) == false && (sst <= tet && tet <= set) == false) {
-					result = true;
-				} else if ((tst < sst) && (tet > set)) {
-					result = true;
-				} else {
-					result = false;
-					alert("과목 시간 겹침;;;;;");
-					break;
-				} 
+					
+	 				if ((sst <= tst && tst<= set) == false && (sst <= tet && tet <= set) == false) {
+						result = true;
+					} else if ((tst < sst) && (tet > set)) {
+						result = true;
+					} else {
+						result = false;
+						alert("과목 시간 겹침;;;;;");
+						break;
+					} 
+					0
+				}else{
+					result =true;
+				}
+
 				
 				// 킹갓 질문 : json에 데이터를 오버해서 넣어도 가능한지?
 			}
@@ -174,6 +175,9 @@
 			sendjson[i++] = str;
 			console.log(sendjson);
 		}
+	}
+	var drawtime = function(){
+		
 	}
 
 	var subjectnamecheck = function(subjectid) {
