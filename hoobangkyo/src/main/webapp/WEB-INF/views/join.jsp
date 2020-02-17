@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="include/header.jsp"%>
+<style>
+
+</style>
 <section>
 	<div>
-		<div class="logindiv">
+		<div align='center'>
 			<form method="post">
 				<div style='color: red'>${msg}</div>
 				<div class="form-group">

@@ -3,7 +3,7 @@
 <%@ include file="include/header.jsp"%>
 <section>
 	<div>
-		<div class="logindiv">
+		<div align='center'>
 			<form method="post">
 				<div style='color: red'>${msg}</div>
 				<div class="form-group">

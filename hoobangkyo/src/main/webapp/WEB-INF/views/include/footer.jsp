@@ -5,7 +5,8 @@
 </head>
 <body>
 	<footer>
-		<div align ='center'> www.naver.com </div>
+		<br/><br/><br/><br/>
+		<div align ='center'> footer.com </div>
 	</footer>
 </body>
 </html>
