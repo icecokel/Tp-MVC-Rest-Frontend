@@ -9,6 +9,8 @@
 </style>
 <section>
 	<div align="center">
+	
+	<div> <h3> 스케줄러 페이지.</h3></div>
 		<div>
 			<table border="1px" width="30%">
 				<tr>
@@ -91,6 +93,14 @@
 					<td class="tg-0lax"><div id="10417"></div></td>
 					<td class="tg-0lax"><div id="10517"></div></td>
 				</tr>
+				<tr>
+					<td class="tg-0lax"><div>18</div></td>
+					<td class="tg-0lax"><div id="10118"></div></td>
+					<td class="tg-0lax"><div id="10218"></div></td>
+					<td class="tg-0lax"><div id="10318"></div></td>
+					<td class="tg-0lax"><div id="10418"></div></td>
+					<td class="tg-0lax"><div id="10518"></div></td>
+				</tr>
 			</table>
 
 		</div>
@@ -102,6 +112,7 @@
 
 				<div>
 					<input type="button" id="btnsend" value="저장하기" />
+					<input type="button" id="btnmain" value="메인으로" />
 				</div>
 
 			</div>
@@ -110,6 +121,10 @@
 	</div>
 </section>
 <script>
+	document.getElementById("btnmain").addEventListener("click", function(e){
+		location.href = "/"	;
+	});
+
 	var sendjson = new Array();
 	var subjectlist = new Array();
 	var username = "킹갓훈";
@@ -122,6 +137,7 @@
 		let subjectname = subjectnamecheck(subjectid);
 
 		console.log(sendjson.length);
+		
 		if (sendjson.length >= 1) {
 
 			for (let j = 0; j < sendjson.length; j++) {
@@ -136,7 +152,6 @@
 					console.log("set" + set)
 					console.log("tst" + tst)
 					console.log("tet" + tet)
-
 					
 	 				if ((sst <= tst && tst<= set) == false && (sst <= tet && tet <= set) == false) {
 						result = true;
@@ -147,12 +162,10 @@
 						alert("과목 시간 겹침;;;;;");
 						break;
 					} 
-					0
+					
 				}else{
 					result =true;
 				}
-
-				
 				// 킹갓 질문 : json에 데이터를 오버해서 넣어도 가능한지?
 			}
 
@@ -173,12 +186,37 @@
 			};
 
 			sendjson[i++] = str;
+			scheduling();
 			console.log(sendjson);
 		}
 	}
-	var drawtime = function(){
+	var drawing = function(wday, starttime , endtime, subjectid){
+		let name  = subjectnamecheck(subjectid);
+		let i = starttime ;
+		for(i ; i <= endtime ; i++){
+			document.getElementById(wday+""+i).innerHTML = name;
+		}
 		
 	}
+	
+	var scheduling = function(){
+		let len = sendjson.length ;
+		
+		for(let i = 0 ; i < len ; i++){
+			
+			let wday = sendjson[i].wday;
+			let starttime = sendjson[i].starttime;
+			let endtime = sendjson[i].endtime;
+			let subjectid = sendjson[i].subjectid;
+			
+			
+			console.log(":::::::" +sendjson[i]);
+			drawing(wday,starttime,endtime,subjectid);
+			
+		}
+		
+	}
+	
 
 	var subjectnamecheck = function(subjectid) {
 		let len = subjectlist.length;
@@ -193,11 +231,10 @@
 	var subjects = function() {
 		var sercheresultdiv = document.getElementById("sercheresultdiv");
 
-		let url = "http://192.168.0.119:8080/api/subject"; // 과목요청 value	
+		let url = "http://192.168.0.119:10001/api/subject"; // 과목요청 value	
 		var htmls = "";
 
-		$
-				.ajax({
+		$.ajax({
 					/* crossOrigin:true, */
 					url : url,
 					success : function(data) {
@@ -226,10 +263,8 @@
 								"subjectname" : data[temp].subjectname
 							};
 							console.log(subjectlist[temp]);
-
 						}
 						sercheresultdiv.innerHTML = htmls;
-
 					}
 				})
 
@@ -247,9 +282,7 @@
 					alert("시간표 등록이 끝났습니다.");
 					location.href = "login";
 				}
-
 			}
-
 		});
 	});
 	$(document).ready(function() {
