@@ -12,6 +12,10 @@
 <body>
 	<div align='center'>
 		<h2>TeamProject Header</h2>
+		<c:if test="${user != null}">
+		${user.username } 님 로그인 중.
+		<input id = "userid"type="text" value ="${user.userid }" style="display:none;"/>
+		</c:if>
 	</div>
 	
 

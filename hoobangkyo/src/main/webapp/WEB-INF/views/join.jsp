@@ -47,10 +47,10 @@
 	username.addEventListener("focusout", function(e) {
 		// 아이디 중복 검사.
 		url = "http://192.168.0.119:10001/api/user/check";
-		usernameval = username.value ;
 		
-		let user = usernameval;
-		usernameval = '"' + username.value + '"';
+		let usernameval = '"' + username.value + '"';
+		console.log(usernameval);
+		let user = '{ "username": ' + usernameval + ' }';
 
 		let object = JSON.parse(JSON.stringify(user));
 
