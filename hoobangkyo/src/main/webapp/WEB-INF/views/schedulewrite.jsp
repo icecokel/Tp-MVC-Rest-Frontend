@@ -3,117 +3,169 @@
 <%@ include file="include/header.jsp"%>
 
 <style>
-.tg-0lax {
+.subjectlist {
+	font-family: 'Jeju Gothic', sans-serif;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.maindiv {
+	padding-left: 17%;
+	padding-right: 17%;
+}
+
+#scheduletable {
 	text-align: center;
+	color: white;
+}
+
+.thead-dark {
+	font-size: 25px;
+}
+
+.thh {
+	background-color: #969696;
+	padding: 5%;
+}
+
+.badge {
+	font-size: 17px;
+}
+
+h3 {
+	color: white;
+}
+
+.times {
+	font-size: 30px;
+}
+#showsubjects{
+ font-size: 40px;
+ background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
-<section>
-	<div align="center">
-	
-	<div> <h3> 스케줄러 페이지.</h3></div>
+
+
+<section class="masthead">
+	<div align="center" class="maindiv">
+
 		<div>
-			<table border="1px" width="30%">
-				<tr>
-					<th class="tg-0lax" width="20%">시간</th>
-					<th class="tg-0lax" width="16%">월</th>
-					<th class="tg-0lax" width="16%">화</th>
-					<th class="tg-0lax" width="16%">수</th>
-					<th class="tg-0lax" width="16%">목</th>
-					<th class="tg-0lax" width="16%">금</th>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>9</div></td>
-					<td class="tg-0lax"><div id="1019"></div></td>
-					<td class="tg-0lax"><div id="1029"></div></td>
-					<td class="tg-0lax"><div id="1039"></div></td>
-					<td class="tg-0lax"><div id="1049"></div></td>
-					<td class="tg-0lax"><div id="1059"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>10</div></td>
-					<td class="tg-0lax"><div id="10110"></div></td>
-					<td class="tg-0lax"><div id="10210"></div></td>
-					<td class="tg-0lax"><div id="10310"></div></td>
-					<td class="tg-0lax"><div id="10410"></div></td>
-					<td class="tg-0lax"><div id="10510"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>11</div></td>
-					<td class="tg-0lax"><div id="10111"></div></td>
-					<td class="tg-0lax"><div id="10211"></div></td>
-					<td class="tg-0lax"><div id="10311"></div></td>
-					<td class="tg-0lax"><div id="10411"></div></td>
-					<td class="tg-0lax"><div id="10511"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>12</div></td>
-					<td class="tg-0lax"><div id="10112"></div></td>
-					<td class="tg-0lax"><div id="10212"></div></td>
-					<td class="tg-0lax"><div id="10312"></div></td>
-					<td class="tg-0lax"><div id="10412"></div></td>
-					<td class="tg-0lax"><div id="10512"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>13</div></td>
-					<td class="tg-0lax"><div id="10113"></div></td>
-					<td class="tg-0lax"><div id="10213"></div></td>
-					<td class="tg-0lax"><div id="10313"></div></td>
-					<td class="tg-0lax"><div id="10413"></div></td>
-					<td class="tg-0lax"><div id="10513"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>14</div></td>
-					<td class="tg-0lax"><div id="10114"></div></td>
-					<td class="tg-0lax"><div id="10214"></div></td>
-					<td class="tg-0lax"><div id="10314"></div></td>
-					<td class="tg-0lax"><div id="10414"></div></td>
-					<td class="tg-0lax"><div id="10514"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>15</div></td>
-					<td class="tg-0lax"><div id="10115"></div></td>
-					<td class="tg-0lax"><div id="10215"></div></td>
-					<td class="tg-0lax"><div id="10315"></div></td>
-					<td class="tg-0lax"><div id="10415"></div></td>
-					<td class="tg-0lax"><div id="10515"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>16</div></td>
-					<td class="tg-0lax"><div id="10116"></div></td>
-					<td class="tg-0lax"><div id="10216"></div></td>
-					<td class="tg-0lax"><div id="10316"></div></td>
-					<td class="tg-0lax"><div id="10416"></div></td>
-					<td class="tg-0lax"><div id="10516"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>17</div></td>
-					<td class="tg-0lax"><div id="10117"></div></td>
-					<td class="tg-0lax"><div id="10217"></div></td>
-					<td class="tg-0lax"><div id="10317"></div></td>
-					<td class="tg-0lax"><div id="10417"></div></td>
-					<td class="tg-0lax"><div id="10517"></div></td>
-				</tr>
-				<tr>
-					<td class="tg-0lax"><div>18</div></td>
-					<td class="tg-0lax"><div id="10118"></div></td>
-					<td class="tg-0lax"><div id="10218"></div></td>
-					<td class="tg-0lax"><div id="10318"></div></td>
-					<td class="tg-0lax"><div id="10418"></div></td>
-					<td class="tg-0lax"><div id="10518"></div></td>
-				</tr>
+			<h3>Schedule</h3>
+			<!-- <button onclick="tableclear()">테이블 클리어</button> -->
+		</div>
+		<div class="subjectlist">
+			<div align="right">
+			<input type="button" id="btnmain"
+					value="메인으로" class="btn btn-light" />
+				<input type="button" id="btnsend" value="저장하기"
+					class="btn btn-success" /> 
+				<input type="button" id="btnclear" value="강의 비우기"
+					class="btn btn-danger" /> 
+					
+			</div>
+			<br/>
+			<table border="1px" class='table' id="scheduletable">
+				<thead class="thead-dark">
+					<tr>
+						<th width="10%"></th>
+						<th width="18%">Mon</th>
+						<th width="18%">Tue</th>
+						<th width="18%">Wed</th>
+						<th width="18%">Thu</th>
+						<th width="18%">Fri</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td><span class="badge badge-secondary times">9</span></td>
+						<td><span class="badge badge-secondary" id="1019"></span></td>
+						<td><span class="badge badge-secondary" id="1029"></span></td>
+						<td><span class="badge badge-secondary" id="1039"></span></td>
+						<td><span class="badge badge-secondary" id="1049"></span></td>
+						<td><span class="badge badge-secondary" id="1059"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">10</span></td>
+						<td><span class="badge badge-secondary" id="10110"></span></td>
+						<td><span class="badge badge-secondary" id="10210"></span></td>
+						<td><span class="badge badge-secondary" id="10310"></span></td>
+						<td><span class="badge badge-secondary" id="10410"></span></td>
+						<td><span class="badge badge-secondary" id="10510"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">11</span></td>
+						<td><span class="badge badge-secondary" id="10111"></span></td>
+						<td><span class="badge badge-secondary" id="10211"></span></td>
+						<td><span class="badge badge-secondary" id="10311"></span></td>
+						<td><span class="badge badge-secondary" id="10411"></span></td>
+						<td><span class="badge badge-secondary" id="10511"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">12</span></td>
+						<td><span class="badge badge-secondary" id="10112"></span></td>
+						<td><span class="badge badge-secondary" id="10212"></span></td>
+						<td><span class="badge badge-secondary" id="10312"></span></td>
+						<td><span class="badge badge-secondary" id="10412"></span></td>
+						<td><span class="badge badge-secondary" id="10512"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">13</span></td>
+						<td><span class="badge badge-secondary" id="10113"></span></td>
+						<td><span class="badge badge-secondary" id="10213"></span></td>
+						<td><span class="badge badge-secondary" id="10313"></span></td>
+						<td><span class="badge badge-secondary" id="10413"></span></td>
+						<td><span class="badge badge-secondary" id="10513"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">14</span></td>
+						<td><span class="badge badge-secondary" id="10114"></span></td>
+						<td><span class="badge badge-secondary" id="10214"></span></td>
+						<td><span class="badge badge-secondary" id="10314"></span></td>
+						<td><span class="badge badge-secondary" id="10414"></span></td>
+						<td><span class="badge badge-secondary" id="10514"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">15</span></td>
+						<td><span class="badge badge-secondary" id="10115"></span></td>
+						<td><span class="badge badge-secondary" id="10215"></span></td>
+						<td><span class="badge badge-secondary" id="10315"></span></td>
+						<td><span class="badge badge-secondary" id="10415"></span></td>
+						<td><span class="badge badge-secondary" id="10515"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">16</span></td>
+						<td><span class="badge badge-secondary" id="10116"></span></td>
+						<td><span class="badge badge-secondary" id="10216"></span></td>
+						<td><span class="badge badge-secondary" id="10316"></span></td>
+						<td><span class="badge badge-secondary" id="10416"></span></td>
+						<td><span class="badge badge-secondary" id="10516"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">17</span></td>
+						<td><span class="badge badge-secondary" id="10117"></span></td>
+						<td><span class="badge badge-secondary" id="10217"></span></td>
+						<td><span class="badge badge-secondary" id="10317"></span></td>
+						<td><span class="badge badge-secondary" id="10417"></span></td>
+						<td><span class="badge badge-secondary" id="10517"></span></td>
+					</tr>
+					<tr>
+						<td><span class="badge badge-secondary times">18</span></td>
+						<td><span class="badge badge-secondary" id="10118"></span></td>
+						<td><span class="badge badge-secondary" id="10218"></span></td>
+						<td><span class="badge badge-secondary" id="10318"></span></td>
+						<td><span class="badge badge-secondary" id="10418"></span></td>
+						<td><span class="badge badge-secondary" id="10518"></span></td>
+					</tr>
+				</tbody>
 			</table>
 
 		</div>
 		<div>
-			<div id="subjectlist">
-				검색 결과 나열.
+			<div class="subjectlist">
+				<span id="showsubjects" class="badge badge-secondary">강의 목록</span><br/>
+				<div id="sercheresultdiv" align='center'></div>
 
-				<div id="sercheresultdiv"></div>
-
-				<div>
-					<input type="button" id="btnsend" value="저장하기" />
-					<input type="button" id="btnmain" value="메인으로" />
-				</div>
 			</div>
 			<br /> <br /> <br /> <br />
 		</div>

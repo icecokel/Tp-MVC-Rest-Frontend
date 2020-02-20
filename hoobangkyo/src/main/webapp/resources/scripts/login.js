@@ -1,7 +1,9 @@
 let joinbtn = document.getElementById("joinbtn");
-joinbtn.addEventListener("click", function(e) {
-	location.href = "join";
-});
+if (joinbtn != null) {
+	joinbtn.addEventListener("click", function(e) {
+		location.href = "join";
+	});
+}
 
 let writebtn = document.getElementById("writebtn");
 
@@ -17,6 +19,15 @@ if (btnlogin != null) {
 	btnlogin.addEventListener("click", function(e) {
 
 		let usernameval = '"' + username.value + '"';
+		if(username.value.trim().length < 1){
+			document.getElementById("msg").innerHTML = "Check your ID or Password";
+			document.getElementById("msg").style.color= "red";
+			
+			username.focus();
+			return;
+		}
+		
+		
 		let passwordval = '"' + password.value + '"';
 
 		let user = '{ "username": ' + usernameval + ' ,"userpw": '
@@ -33,13 +44,32 @@ if (btnlogin != null) {
 			type : 'POST',
 			data : object,
 			success : function(data) {
-				datauserid = data.user.userid;
-
-				if (data.result == 1) {
+				let idcheck = data.result;
+				console.log(idcheck);
+				
+				if (idcheck == 1) {
+					datauserid = data.user.userid;
 					postlogin();
 					location.href = "schedulewrite"
+				}else{
+					document.getElementById("msg").innerHTML = "Check your ID or Password";
+					document.getElementById("msg").style.color= "red";
+					
+					username.value= "";
+					password.value= "";
+					
+					username.focus();
 				}
 
+			},
+			error : function() {
+				document.getElementById("msg").innerHTML = "Check your ID or Password";
+				document.getElementById("msg").style.color= "red";
+				
+				username.value= "";
+				password.value= "";
+				
+				username.focus();
 			}
 		})
 	})
@@ -57,7 +87,7 @@ var postlogin = function() {
 			"userid" : userid
 		},
 		success : function() {
-			alert("성공");
+			console.log("로그인 성공.");
 		}
 
 	})

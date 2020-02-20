@@ -2,26 +2,118 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="include/header.jsp"%>
 <style>
+h3 {
+	color: white;
+}
+
+section {
+	height: 1000px;
+	display: block;
+	background-size: 100% 100%;
+}
+
+#joinmaindiv {
+	font-family: 'Jeju Gothic', sans-serif;
+	padding: 10%;
+}
+
+#joindiv {
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.joinlabel {
+	color: white;
+	font-size: 30px;
+	display: inline-block;
+}
+
+#msg {
+	font-family: 'Jeju Gothic', sans-serif;
+	font-size: 40px;
+	background-color: rgba(255, 255, 255, 0.3);
+	opacity: 0.7;
+	-webkit-animation: blink 0.5s ease-in-out infinite alternate;
+	-moz-animation: blink 0.5s ease-in-out infinite alternate;
+	animation: blink 0.5s ease-in-out infinite alternate;
+}
+
+@
+-webkit-keyframes blink { 0% {
+	opacity: 0;
+}
+
+100%
+{
+opacity
+
+
+:
+
+
+1;
+}
+}
+@
+-moz-keyframes blink { 0% {
+	opacity: 0;
+}
+
+100%
+{
+opacity
+
+
+:
+
+
+1;
+}
+}
+@
+keyframes blink { 0% {
+	opacity: 0;
+}
+100%
+{
+opacity
+
+
+:
+
+
+1;
+}
+}
 </style>
-<section>
-	<div>
-		<div align=center>
-			<div id="msg"></div>
+
+<section class="masthead">
+	<div id="joinmaindiv">
+		<div align=center id="joindiv">
+
 			<div>
-				<h3>회원가입 페이지.</h3>
+				<h3>Create your account</h3>
 			</div>
-			<div class="form-group">
-				<label>id</label> <input type="text" id="username"
-					aria-describedby="emailHelp" placeholder="id을 입력하세요">
-			</div>
-
-			<div class="form-group">
-				<label>비밀번호</label> <input type="password" id="password"
-					placeholder="비밀번호를 입력하세요">
+			<span class="badge badge-secondary" id="msg"></span>
+			<div>
+				<label class="joinlabel">ID</label> <input class="form-control"
+					type="text" id="username" aria-describedby="emailHelp"
+					placeholder="Enter your ID">
 			</div>
 
-			<button type="button" id="btnjoin">회원가입</button>
-			<br /> <input type="button" id="joinbtn" value="로그인 하러가기" />
+			<div>
+				<label class="joinlabel">Password</label> <input
+					class="form-control" type="password" id="password"
+					placeholder="Enter your Password">
+			</div>
+			<br />
+			<button class="btn btn-success" type="button" id="btnjoin">
+				<span class="buttonP">Sign Up</span>
+			</button>
+			&nbsp;
+			<button class="btn btn-light" type="button" id="joinbtn">
+				<span class="buttonP">Sign In</span>
+			</button>
 
 		</div>
 	</div>
@@ -47,14 +139,19 @@
 	username.addEventListener("focusout", function(e) {
 		// 아이디 중복 검사.
 		url = "http://192.168.0.119:10001/api/user/check";
-		
+
+		if (username.value.trim().length < 1) {
+			msg.innerHTML = "ID cannot be empty";
+			msg.style.color = "red";
+			username.focus();
+			return;
+		}
+
 		let usernameval = '"' + username.value + '"';
-		console.log(usernameval);
 		let user = '{ "username": ' + usernameval + ' }';
 
 		let object = JSON.parse(JSON.stringify(user));
 
-		console.log(object);
 		$.ajax({
 			contentType : 'application/json; charset=UTF-8',
 			data : object,
@@ -63,11 +160,11 @@
 			url : url,
 			success : function(data) {
 				if (data.result == 1) {
-					msg.innerHTML = "사용 가능한 아이디 입니다.";
+					msg.innerHTML = "This ID is available.";
 					msg.style.color = "green";
 					idcheckflag = true;
 				} else {
-					msg.innerHTML = "이미 사용중인 아이디 입니다.";
+					msg.innerHTML = "This ID is not available.";
 					msg.style.color = "red";
 					idcheckflag = false;
 				}
@@ -84,6 +181,9 @@
 
 		if (username.value.trim().length < 1
 				|| password.value.trim().length < 1) {
+			msg.innerHTML = "ID and Password cannot be empty";
+			msg.style.color = "red";
+			username.focus();
 			return;
 		}
 
@@ -101,9 +201,9 @@
 
 		let user = '{ "username": ' + usernameval + ' ,"userpw": '
 				+ passwordval + ' }';
-
 		let object = JSON.parse(JSON.stringify(user));
 		console.log(object);
+
 		$.ajax({
 			contentType : 'application/json; charset=UTF-8',
 			url : url,
