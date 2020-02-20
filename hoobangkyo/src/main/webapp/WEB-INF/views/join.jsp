@@ -125,16 +125,38 @@ opacity
 	joinbtn.addEventListener("click", function(e) {
 		location.href = "/";
 	})
-
+	
+	
+	
+	
 	let btnjoin = document.getElementById("btnjoin");
 
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
+	
+	let msg = document.getElementById("msg");
+	
+	password.addEventListener("keyup",function(e) {
+		
+				let pw = password;
+				let pwVlaue = pw.value.trim();
 
+				let passRule = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+
+				if (passRule.test(pwVlaue)) {
+					msg.innerHTML = '&nbsp;&nbsp; This password is very safe.';
+					msg.style.color = 'green';
+				
+				} else {
+					msg.innerHTML = '&nbsp;&nbsp; This password is not safe!<br/>Password must include English, number, and special symbol!';
+					msg.style.color = 'red';
+				}
+
+			});
 	var usernameval = "";
 	var passwordval = "";
 
-	let msg = document.getElementById("msg");
+	
 	let idcheckflag = false;
 	username.addEventListener("focusout", function(e) {
 		// 아이디 중복 검사.

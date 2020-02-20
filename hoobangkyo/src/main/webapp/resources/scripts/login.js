@@ -6,10 +6,10 @@ if (joinbtn != null) {
 }
 
 let writebtn = document.getElementById("writebtn");
-
+if(writebtn!=null){
 writebtn.addEventListener("click", function(e) {
 	location.href = "schedulewrite";
-});
+});}
 
 let btnlogin = document.getElementById("btnlogin");
 let username = document.getElementById("username");

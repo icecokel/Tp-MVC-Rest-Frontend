@@ -91,8 +91,9 @@ opacity: 0.7;
 
 				<c:if test="${user != null}">
 					<button class="btn btn-danger" type="button" id="btnlogout" ><span class="buttonP">Sign Out</span></button>&nbsp;
+					<button class="btn btn-light" type="button" id="writebtn" ><span class="buttonP">Schedule</span></button>
 				</c:if>
-				<button class="btn btn-light" type="button" id="writebtn" ><span class="buttonP">Schedule</span></button>
+				
 			</div>
 
 		</div>
