@@ -1,3 +1,5 @@
+const baseUrl = "http://ec2-13-125-154-125.ap-northeast-2.compute.amazonaws.com:8080/scheduler/" ;
+
 document.getElementById("btnmain").addEventListener("click", function(e) {
 	location.href = "/";
 });
@@ -19,7 +21,7 @@ var writejson = function(subjectid, tst, tet, wday) {
 		if (subjectlist[k].subjectid == subjectid)
 			color = subjectlist[k].color;
 	}
-	console.log(savejson.length);
+
 
 	if (savejson.length >= 1) {
 
@@ -81,7 +83,7 @@ var writejson = function(subjectid, tst, tet, wday) {
 		savejson.push(str);
 		scheduling();
 		$("#scheduletable").attr("tabindex", -1).focus();
-		// console.log(savejson);
+
 	}
 
 }
@@ -89,10 +91,6 @@ var writejson = function(subjectid, tst, tet, wday) {
 var scheduleupdate = function(index, userid, subjectid, tst, tet, wday,
 		subjectname, color) {
 	savejson.splice(index, 1);
-
-	// console.log(subjectid);
-	// console.log(subjectname);
-	// console.log(color);
 
 	var strr = {
 		"userid" : userid,
@@ -168,7 +166,7 @@ var subjectcolorcheck = function(subjectid) {
 var subjects = function() {
 	var sercheresultdiv = document.getElementById("sercheresultdiv");
 
-	let url = "http://192.168.0.119:10001/api/subject"; // 과목요청 value
+	let url = baseUrl + "api/subject"; // 과목요청 value
 	var htmls = "";
 
 	$
@@ -176,7 +174,6 @@ var subjects = function() {
 				/* crossOrigin:true, */
 				url : url,
 				success : function(data) {
-					/* console.log(data); */
 
 					htmls = "<table class='table' id='scheduletable'>";
 					htmls += "<tr><td >강의이름</td><td >요일</td><td >강의시간</td><td>선택</td></tr></thead'><tbody>"
@@ -264,7 +261,7 @@ btnsend.addEventListener("click", function(e) {
 
 	console.log(sendjson);
 
-	let url = "http://192.168.0.119:10001/api/schedule";
+	let url = baseUrl + "api/schedule";
 		$.ajax({
 			contentType : 'application/json; charset=UTF-8',
 			url : url,
@@ -284,7 +281,7 @@ btnsend.addEventListener("click", function(e) {
 });
 var schedulelist = function() {
 	let id = userid;
-	url = "http://192.168.0.119:10001/api/schedule/" + id;
+	url = baseUrl + "api/schedule/" + id;
 	$.ajax({
 		url : url,
 		success : function(data) {

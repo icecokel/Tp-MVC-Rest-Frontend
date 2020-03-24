@@ -1,3 +1,5 @@
+const baseUrl = "http://ec2-13-125-154-125.ap-northeast-2.compute.amazonaws.com:8080/scheduler/" ;
+
 let joinbtn = document.getElementById("joinbtn");
 if (joinbtn != null) {
 	joinbtn.addEventListener("click", function(e) {
@@ -18,7 +20,6 @@ var datauserid = "";
 if (btnlogin != null) {
 	btnlogin.addEventListener("click", function(e) {
 
-		let usernameval = '"' + username.value + '"';
 		if(username.value.trim().length < 1){
 			document.getElementById("msg").innerHTML = "Check your ID or Password";
 			document.getElementById("msg").style.color= "red";
@@ -27,15 +28,16 @@ if (btnlogin != null) {
 			return;
 		}
 		
+		var user = {
+				"username" : username.value,
+				"userpw" : password.value
+		};
 		
-		let passwordval = '"' + password.value + '"';
+		var object = JSON.stringify(user)
+		
+		
 
-		let user = '{ "username": ' + usernameval + ' ,"userpw": '
-				+ passwordval + ' }';
-
-		let object = JSON.parse(JSON.stringify(user));
-
-		let url = "http://192.168.0.119:10001/api/user/login";
+		let url = baseUrl+"api/user/login";
 
 		$.ajax({
 			contentType : 'application/json; charset=UTF-8',
