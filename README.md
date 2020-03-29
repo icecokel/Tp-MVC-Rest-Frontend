@@ -1,4 +1,5 @@
-# Tp-MVC-Rest-Frontend
+# 4.5
+#### 강의 신청 및 스케줄 관리 웹 어플리케이션 서비스
 
 <img src="https://user-images.githubusercontent.com/55083854/77849096-09519a80-7204-11ea-9997-2ce375b4f8e4.JPG" width ="80%">
 
