@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="include/header.jsp"%>
+<%@ include file="./include/header.jsp"%>
 <style>
 h3 {
 	color: white;
@@ -111,13 +111,13 @@ opacity
 				<span class="buttonP">Sign Up</span>
 			</button>
 			&nbsp;
-			<button class="btn btn-light" type="button" id="joinbtn">
+			<button class="btn btn-light" type="button" id="loginbtn">
 				<span class="buttonP">Sign In</span>
 			</button>
 
 		</div>
 	</div>
 </section>
-<%@ include file="include/footer.jsp"%>
+<%@ include file="./include/footer.jsp"%>
 
-<script src="/resources/scripts/join.js"></script>
+<script src="/hoobangkyo/resources/scripts/join.js"></script>

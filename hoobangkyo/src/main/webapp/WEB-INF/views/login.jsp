@@ -101,4 +101,4 @@ opacity: 0.7;
 </section>
 <%@ include file="include/footer.jsp"%>
 
-<script src="/resources/scripts/login.js"></script>
+<script src="/hoobangkyo/resources/scripts/login.js"></script>

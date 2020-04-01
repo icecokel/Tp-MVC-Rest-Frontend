@@ -14,7 +14,7 @@ input[type="password"] {
 }
 
 	section{
-	background-image: url('/resources/images/university.jpg');
+	background-image: url('/hoobangkyo/resources/images/university.jpg');
 	/* background-size: 100% 100%; */
 }
 
@@ -27,13 +27,13 @@ input[type="password"] {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>4.5P</title>
-<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+<link href="/hoobangkyo/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" />
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <body>
 	<div align='center'>
-		<a href="/"><img src="/resources/images/logo.png" width="6%" height="6%"/><br/></a>
+		<a href="/hoobangkyo/"><img src="/hoobangkyo/resources/images/logo.png" width="6%" height="6%"/><br/></a>
 		<c:if test="${user != null}">
 		${user.username } 님 로그인 중.
 		<input id="userid" type="text" value="${user.userid }"

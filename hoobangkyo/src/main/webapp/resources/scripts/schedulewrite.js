@@ -1,7 +1,7 @@
 const baseUrl = "http://ec2-13-125-154-125.ap-northeast-2.compute.amazonaws.com:8080/scheduler/" ;
 
 document.getElementById("btnmain").addEventListener("click", function(e) {
-	location.href = "/";
+	location.href = "/hoobangkyo/";
 });
 
 var useridgetter = document.getElementById("userid");

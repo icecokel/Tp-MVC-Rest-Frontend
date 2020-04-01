@@ -171,5 +171,5 @@ h3 {
 		</div>
 	</div>
 </section>
-<script src="/resources/scripts/schedulewrite.js"></script>
+<script src="/hoobangkyo/resources/scripts/schedulewrite.js"></script>
 <%@ include file="include/footer.jsp"%>

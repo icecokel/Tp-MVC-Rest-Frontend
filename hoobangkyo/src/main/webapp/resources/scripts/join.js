@@ -1,12 +1,11 @@
 const baseUrl = "http://ec2-13-125-154-125.ap-northeast-2.compute.amazonaws.com:8080/scheduler/" ;
 	
 	
-	let joinbtn = document.getElementById("joinbtn");
+	let loginbtn = document.getElementById("loginbtn");
 
-joinbtn.addEventListener("click", function(e) {
-	location.href = "/";
+	loginbtn.addEventListener("click", function(e) {
+	location.href = "/hoobangkyo/";
 })
-
 
 
 
@@ -111,7 +110,7 @@ btnjoin.addEventListener("click", function(e) {
 		success : function(data) {
 			if (data.result == 1) {
 				alert("회원가입 성공");
-				location.href = "/";
+				location.href = "/hoobangkyo/";
 			}
 
 		},
