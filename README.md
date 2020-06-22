@@ -3,10 +3,10 @@
 
 <img src="https://user-images.githubusercontent.com/55083854/77849096-09519a80-7204-11ea-9997-2ce375b4f8e4.JPG" width ="80%">
 
-[AWS Server 확인하러 가기](http://52.78.5.224:8080/hoobangkyo/)
+[AWS Server 확인하러 가기](http://15.164.73.234:8080/hoobangkyo/)
 
 ### 팀프로젝트
-
+s
 #### 담당 파트 : 프론트 엔드 서버
 
 #### 공동 기획
