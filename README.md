@@ -3,7 +3,6 @@
 
 <img src="https://user-images.githubusercontent.com/55083854/77849096-09519a80-7204-11ea-9997-2ce375b4f8e4.JPG" width ="80%">
 
-[AWS Server 확인하러 가기](http://15.164.73.234:8080/hoobangkyo/)
 
 ### 팀프로젝트
 s
